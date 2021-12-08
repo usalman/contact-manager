@@ -6,7 +6,7 @@ const AddContact = ({contacts, setContacts}) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     setContacts([
-      ...contacts, { id: uuid(), name: e.target.name.value, email: e.target.email.value }
+      { id: uuid(), name: e.target.name.value, email: e.target.email.value }, ...contacts
     ])
   }
 

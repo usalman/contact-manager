@@ -6,7 +6,7 @@ const ContactCard = ({ contact, contacts, setContacts }) => {
     e.preventDefault();
     setContacts(contacts.filter(el => el.id !== contact.id))
   }
-
+  
   return (
     <>
       <li>
