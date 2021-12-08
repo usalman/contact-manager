@@ -1,14 +1,30 @@
-import './App.css';
-import Header from './components/Header'
-import AddContact from './components/AddContact'
-import ContactList from './components/ContactList'
+import "./App.css";
+import {useState} from 'react';
+import Header from "./components/Header";
+import AddContact from "./components/AddContact";
+import ContactList from "./components/ContactList";
 
 function App() {
+
+  const contacts = [
+    {
+      id: 1,
+      name: "umit",
+      email: "umit.salman.mail@gmail.com",
+    },
+
+    {
+      id: 2,
+      name: "ali",
+      email: "ali@veli.com",
+    },
+  ]
+
   return (
     <div className="App">
       <Header />
       <AddContact />
-      <ContactList />
+      <ContactList contacts={contacts}/>
     </div>
   );
 }
