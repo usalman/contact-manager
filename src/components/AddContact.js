@@ -1,10 +1,18 @@
 import React from "react";
 
-const AddContact = () => {
+const AddContact = ({contacts, setContacts}) => {
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setContacts([
+      ...contacts, { name: e.target.name.value, email: e.target.email.value }
+    ])
+  }
+
   return (
     <div>
       <h2>Add Contact</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label>Name:</label>
           <input type="text" name="name" />

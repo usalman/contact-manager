@@ -6,7 +6,7 @@ import ContactList from "./components/ContactList";
 
 function App() {
 
-  const contacts = [
+  const [contacts, setContacts] = useState([
     {
       id: 1,
       name: "umit",
@@ -18,12 +18,12 @@ function App() {
       name: "ali",
       email: "ali@veli.com",
     },
-  ]
+  ])
 
   return (
     <div className="App">
       <Header />
-      <AddContact />
+      <AddContact contacts={contacts} setContacts={setContacts}/>
       <ContactList contacts={contacts}/>
     </div>
   );
