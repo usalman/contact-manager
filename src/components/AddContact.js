@@ -5,7 +5,7 @@ const AddContact = ({contacts, setContacts}) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     setContacts([
-      ...contacts, { name: e.target.name.value, email: e.target.email.value }
+      ...contacts, { id: Math.random() * 1234, name: e.target.name.value, email: e.target.email.value }
     ])
   }
 

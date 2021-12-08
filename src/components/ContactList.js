@@ -6,7 +6,7 @@ const ContactList = ({ contacts }) => {
     <div>
       <h2>Contast List</h2>
       {contacts.map((contact) => {
-        return <ContactCard contact={contact}/>
+        return <ContactCard key={contact.id} contact={contact} />;
       })}
     </div>
   );

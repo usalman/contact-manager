@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
 
-const ContactCard = ({contact}) => {
+const ContactCard = ({ contact }) => {
   return (
     <>
-      <li key={contact.id}>{contact.name} / {contact.email}</li>
+      <li>
+        {contact.name} / {contact.email}
+      </li>
     </>
-  )
-}
+  );
+};
 
-export default ContactCard
+export default ContactCard;
