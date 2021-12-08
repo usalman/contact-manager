@@ -12,7 +12,7 @@ function App() {
     const localContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     setContacts(localContacts);
   }, []);
-  
+
   useEffect(() => {
     // initial renderda çalışmakta, contacts'ın default değerlerini locale basıyor
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));

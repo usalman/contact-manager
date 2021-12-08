@@ -1,11 +1,12 @@
 import React from "react";
+import { uuid } from 'react-uuid';
 
 const AddContact = ({contacts, setContacts}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
     setContacts([
-      ...contacts, { id: Math.random() * 1234, name: e.target.name.value, email: e.target.email.value }
+      ...contacts, { id: uuid(), name: e.target.name.value, email: e.target.email.value }
     ])
   }
 
@@ -18,7 +19,7 @@ const AddContact = ({contacts, setContacts}) => {
           <input type="text" name="name" />
         </div>
         <div>
-          <label>Surname:</label>
+          <label>Email:</label>
           <input type="text" name="email" />
         </div>
         <button>Add</button>
