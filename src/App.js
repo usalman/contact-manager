@@ -22,7 +22,7 @@ function App() {
     <div className="App">
       <Header />
       <AddContact contacts={contacts} setContacts={setContacts} />
-      <ContactList contacts={contacts} />
+      <ContactList contacts={contacts} setContacts={setContacts}/>
     </div>
   );
 }
