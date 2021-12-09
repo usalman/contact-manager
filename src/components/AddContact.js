@@ -9,7 +9,6 @@ const AddContact = ({
   nameRef,
   emailRef,
   editContactId,
-  setEditContactId,
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();

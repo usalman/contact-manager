@@ -4,18 +4,16 @@ const ContactCard = ({
   contact,
   contacts,
   setContacts,
-  mod,
   setMod,
   nameRef,
   emailRef,
-  editContactId,
   setEditContactId,
 }) => {
   const handleClickDelete = (e) => {
     e.preventDefault();
     setContacts(contacts.filter((el) => el.id !== contact.id));
   };
-  
+
   const handleClickEdit = (id) => {
     nameRef.current.value = contact.name;
     emailRef.current.value = contact.email;
