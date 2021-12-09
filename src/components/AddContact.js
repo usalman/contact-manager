@@ -12,6 +12,7 @@ const AddContact = ({
 }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
+    if(nameRef.current.value === '' || emailRef.current.value === '') return;
     setContacts([
       { id: uuid(), name: e.target.name.value, email: e.target.email.value },
       ...contacts,
