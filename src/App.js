@@ -9,7 +9,7 @@ function App() {
   const [mod, setMod] = useState("addContact");
   const [editContactId, setEditContactId] = useState(null);
   const [searchResults, setSearchResults] = useState([]);
-  
+
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const LOCAL_STORAGE_KEY = "contacts";
@@ -18,7 +18,7 @@ function App() {
     const localContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     setContacts(localContacts);
   }, []);
-
+  
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contacts));
   }, [contacts]);

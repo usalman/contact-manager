@@ -14,7 +14,7 @@ const ContactList = ({
   setSearchResults,
 }) => {
 
-  const searchInputRef = useRef(null)
+  const searchInputRef = useRef('')
 
   const handleChange = () => {
     const searchValue = searchInputRef.current.value
@@ -24,16 +24,17 @@ const ContactList = ({
       })
       console.log(searchResults);
       setSearchResults(searchResults)
+    } else {
+      setSearchResults(contacts)
     }
   }
 
-  if(searchResults.length === 0){
     return (
       <div>
         <h2>Contast List</h2>
         <input type="text" placeholder="Search Contacts" ref={searchInputRef} onChange={handleChange}/>
         {
-          contacts.map((contact) => {
+          (searchResults.length === 0 && searchInputRef.current.value === '' ? contacts : searchResults).map((contact) => {
           return (
             <ContactCard
               key={contact.id}
@@ -51,31 +52,7 @@ const ContactList = ({
         })}
       </div>
     );
-  } else {
-    return (
-      <div>
-        <h2>Contast List</h2>
-        <input type="text" placeholder="Search Contacts" ref={searchInputRef} onChange={handleChange}/>
-        {
-          searchResults.map((contact) => {
-          return (
-            <ContactCard
-              key={contact.id}
-              contact={contact}
-              contacts={contacts}
-              setContacts={setContacts}
-              mod={mod}
-              setMod={setMod}
-              nameRef={nameRef}
-              emailRef={emailRef}
-              editContactId={editContactId}
-              setEditContactId={setEditContactId}
-            />
-          );
-        })}
-      </div>
-    )
-  }
+  
 }
   
 
