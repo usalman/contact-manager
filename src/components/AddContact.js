@@ -28,6 +28,8 @@ const AddContact = ({
     let updatedContacts = contacts.slice();
     updatedContacts[indexOfEditedContact].name = nameRef.current.value;
     updatedContacts[indexOfEditedContact].email = emailRef.current.value;
+    nameRef.current.value = "";
+    emailRef.current.value = "";
     setContacts([...updatedContacts]);
     setMod("addContact");
   };

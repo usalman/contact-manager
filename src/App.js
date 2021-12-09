@@ -8,7 +8,8 @@ function App() {
   const [contacts, setContacts] = useState([]);
   const [mod, setMod] = useState("addContact");
   const [editContactId, setEditContactId] = useState(null);
-
+  const [searchResults, setSearchResults] = useState([]);
+  
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const LOCAL_STORAGE_KEY = "contacts";
@@ -44,6 +45,8 @@ function App() {
         emailRef={emailRef}
         editContactId={editContactId}
         setEditContactId={setEditContactId}
+        searchResults={searchResults}
+        setSearchResults={setSearchResults}
       />
     </div>
   );
