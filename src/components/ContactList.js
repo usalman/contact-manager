@@ -13,14 +13,14 @@ const ContactList = ({
   searchResults,
   setSearchResults,
 }) => {
-
+  
   const searchInputRef = useRef('')
 
   const handleChange = () => {
     const searchValue = searchInputRef.current.value
     if(searchValue !== "") {
       searchResults = contacts.filter(contact => {
-        return contact.name.includes(searchValue)
+        return contact.name.includes(searchValue) || contact.email.includes(searchValue)
       })
       console.log(searchResults);
       setSearchResults(searchResults)
